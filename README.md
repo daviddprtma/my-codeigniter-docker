@@ -31,7 +31,7 @@ How to start your project
 
 ```bash
 cd project-name
-docker-compose up --buil
+docker-compose up --build
 ```
  
 <h2 id="colab">🤝 Collaborators</h2>
