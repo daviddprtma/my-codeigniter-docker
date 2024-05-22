@@ -1,17 +1,17 @@
 services:
   cigniter-docker:
-    container_name: cigniter4-docker
+    container_name: nama-container
     build: .
     volumes:
-      - ./cigniter-app:/var/www/html
+      - ./container-app:/var/www/html
     ports:
       - 8080:80
   
   mysql_db:
     image: mysql:latest
     environment:
-      MYSQL_ROOT_PASSWORD: david123
-      MYSQL_DATABASE: job_portal_ci
+      MYSQL_ROOT_PASSWORD: userpassword
+      MYSQL_DATABASE: dbname
     ports:
     - 3306:3306
   
