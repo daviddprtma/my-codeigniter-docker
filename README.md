@@ -32,6 +32,7 @@ How to start your project
 ```bash
 cd project-name
 docker-compose up --build
+docker exec -it your_container_id bash
 ```
  
 <h2 id="colab">🤝 Collaborators</h2>
