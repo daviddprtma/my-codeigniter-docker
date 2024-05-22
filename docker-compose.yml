@@ -1,27 +1,23 @@
-version: '3.8'
-
 services:
-  app:
+  cigniter-docker:
+    container_name: cigniter4-docker
     build: .
-    ports:
-      - "8080:80"
     volumes:
-      - .:/var/www/html
-    depends_on:
-      - db
-
-  db:
-    image: mysql:8.0
-    restart: always
+      - ./cigniter-app:/var/www/html
+    ports:
+      - 8080:80
+  
+  mysql_db:
+    image: mysql:latest
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: database
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: david123
+      MYSQL_DATABASE: job_portal_ci
     ports:
-      - "3306:3306"
-    volumes:
-      - db_data:/var/lib/mysql
-
-volumes:
-  db_data:
+    - 3306:3306
+  
+  phpmyadmin:
+    image: phpmyadmin:latest
+    ports:
+      - 8081:80
+    environment:
+      - PMA_ARBITRARY=1
